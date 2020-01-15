@@ -1,0 +1,346 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%
+}
+
+*,  *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+  background-color: #f6f7fb;
+  color: #333;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; 
+}
+
+a:active, a:hover, a:visited, a:link {
+  color: #7d5119;
+  text-decoration: none;
+}
+
+/* ここまで全体のデザイン */
+/* --------------------------------------------------------------- */
+
+.item {
+  width: 180px;
+  margin-bottom: 4px;
+  padding: 8px;
+  border-bottom: 3px solid;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.item:nth-of-type(n+2) {
+  min-height: 236px;
+}
+
+.item > a {
+  display: block;
+  min-height: 236px;
+  padding: 8px 8px 11px;
+  margin: -8px -8px -11px;
+  transition: all 0.3s; 
+  border-radius: inherit;
+}
+
+.item:hover {
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* ここまでitemの全体のデザイン */
+/* ------------------------------------------------------------------------- */
+
+.item .image img {
+  display: block;
+  width: 100%;
+  height: 109px;
+} 
+
+.item .image {
+  position: relative;
+}
+
+.item > a .image::before {
+  content:'';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.item > a:hover .image::before {
+  opacity: 1;
+}
+/* 黒の半透明色を被せる */
+
+
+.item > a .image::after {
+  content:'MORE';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  margin-top: -19px;
+  margin-left: -50px;  
+  width: 100px;
+  border: 3px solid #fff;
+  color: #fff;
+  padding: 8px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  transition: all 0.4s linear;
+  opacity: 0;
+}
+
+.item:first-of-type > a .image::after {
+  display: none;
+}
+/* imageのうち最初だけスタイルを適用させない */
+
+.item:nth-of-type(4) > a .image::after {
+  content:'YUMMY!'
+}
+
+.item:last-of-type > a .image::after {
+  content:'To Be Continued! \A Where To Go Next...?';
+  border: none;
+  font-size: 5rem;
+  margin-top: -36px;
+  margin-left: -250px;
+  width: 500px;
+  letter-spacing: 2px;
+  line-height: 1.5; 
+  transition-delay: 0.2s;
+  transition-duration: 0.5s;
+}
+
+.item > a:hover .image::after {
+  opacity: 1;
+  left: 50%;
+}
+
+.item:last-of-type > a:hover .image::after {
+  transform: rotate(720deg);
+}
+/* hover時に字をアニメーションさせる */
+/* 下は最初のみ適用のスタイル */
+
+.item > a .image > .message {
+  display: block;
+  position: absolute;
+  color: #fff;
+  width: 300px;
+  margin-left: -150px;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  transition: all 0.4s linear;
+}
+/* --------------------------------------------- */
+.item > a .image > .message-a {
+  top: 5%;
+  left: 150%;
+  opacity: 0;
+}
+
+.item > a:hover .image > .message-a {
+  opacity: 1;
+  left: 50%;
+}
+/* ----------------------------------- */
+.item > a .image > .message-b {
+  top: 20%;
+  left: 150%;
+  opacity: 0;
+}
+
+.item > a:hover .image > .message-b {
+  opacity: 1;
+  left: 50%;
+  transition-delay: 0.2s;
+}
+/* ------------------------------------- */
+.item > a .image > .message-c {
+  top: 35%;
+  left: 150%;
+  opacity: 0;
+}
+
+.item > a:hover .image > .message-c {
+  opacity: 1;
+  left: 50%;
+  transition-delay: 0.3s;
+}
+/* ---------------------------------------- */
+.item > a .image > .message-d {
+  top: 50%;
+  left: 150%;
+  opacity: 0;
+}
+
+.item > a:hover .image > .message-d {
+  opacity: 1;
+  left: 50%;
+  transition-delay: 0.4s;
+}
+/* --------------------------------------------- */
+.item > a .image > .message-e {
+  top: 80%;
+  left: 150%;
+  opacity: 0;
+  font-size: 5rem
+}
+
+.item > a:hover .image > .message-e {
+  opacity: 1;
+  left: 50%;
+  transition-delay: 0.5s;
+}
+
+
+
+/* ここまで、imageのデザイン */
+/* --------------------------------------------------------------------------- */
+
+
+.item .title {
+  padding: 15px 9px 10px;
+  color: #aaa;
+  letter-spacing: 1px;
+  font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.item .title::before {
+  content: '';
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 2px solid;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: -5px;
+}
+
+.item .description {
+  margin: 10px;
+  line-height: 1.5;
+}
+
+.item .description.two {
+  font-size: 4.0rem;
+} 
+
+/*ここまでitem内のタイトルと説明文のデザイン */
+/* ------------------------------------------------------------- */
+
+.item-appetizer, .item-appetizer .title::before {
+  border-color: #76c047;
+} 
+
+.item-pasta, .item-pasta .title::before {
+  border-color: #fff100;
+}
+
+.item-dish, .item-dish .title::before {
+  border-color: #ffc0cb;
+}
+
+.item-breaktime, .item-breaktime .title::before {
+  border-color: #c1efff;
+}
+
+/* ここまでborderの配色のデザイン */
+/* ------------------------------------------------------------------- */
+
+.item-m {
+  width: 364px;
+}
+
+.item-m .image img {
+  height: 146px;
+}
+
+.item-l {
+  width: 732px;
+}
+
+.item-l .image img {
+  height: 403px;
+}
+
+.item-ll {
+  width: 1280px;
+}
+
+.item-ll .image img {
+  height: auto;
+} 
+
+/* ここまでitemとimageの各サイズのデザイン
+m = s × 2, l = m × 2, ll = s × 7 (l,m,s各1)*/
+/* ----------------------------------------------------- */
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header.item {
+  height: 155px;
+}
+
+.header .logo:hover {
+  transform: rotate(720deg);
+  -webkit-transform: rotate(720deg);
+  transition: 0.7s;
+}
+
+/* ここまでヘッダー左側のデザイン */
+/* -------------------------------------------------- */
+
+.nav .nav-item .list {
+  height: 155px;
+} 
+
+.nav .nav-item {
+  display: inline-block;
+  vertical-align: -53px;
+}
+
+.nav .nav-item a {
+  display: inline-block;
+  padding: 0 25px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav .nav-item a::after {
+  content: '';
+  display: block;
+  border-bottom: 2px solid #7d5119;
+  width: 0; 
+  transition: all 0.4s ease-in-out;
+  margin: 6px auto 0;
+} 
+/* 線が真ん中から伸びるようにするには、左右のmarginを同じ＝autoにすればOK */
+
+.nav .nav-item a:hover::after {
+  width: 100%;
+}
+
+/* ここまでヘッダーの左側ナビゲーションのデザイン */
+/* ---------------------------------------------------------- */
